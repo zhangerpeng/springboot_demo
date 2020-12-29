@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<link rel="stylesheet" href="/css/user.css" />
+<title>用户管理系统</title>
+<script type="text/javascript" src="/webjars/3.1.1/jquery.min.js"></script>
+<script type="text/javascript"
+	src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div th:replace="header::copy"></div>
+		<!--判定用户是否登录成功-->
+		<div class="content" sec:authorize="isAuthenticated()">
+			<div id="register_button" sec:authorize="hasRole('ADMN')">
+				<button style="width: 150px">登录按钮</button>
+			</div>
+			<div id="search_button">
+				<button style="width: 150px" th:onclick="'window.location.href=\''+@{/user/search?form}+'\''">检索按钮</button>
+				
+				<button style="width: 150px" th:onclick="'window.location.href=@{/user/search?form}'">检索按钮2</button>
+			</div>
+		</div>
+		<div th:replace="footer::copy"></div>
+
+	</div>
+</body>
+</html>

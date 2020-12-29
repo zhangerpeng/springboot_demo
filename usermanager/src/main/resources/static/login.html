@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" href="/css/user.css" />
+<title>用户管理系统</title>
+</head>
+<body>
+	<div class="container">
+		<div class="header"> 
+		<div style="float:left;margin-top:15px;">用户管理系统</div>
+		</div>
+		<div class="content">
+			<form action="/authentication/login" method="post">
+				<div class="login_form">
+					<table>
+						<tr>
+							<td>用户名:</td>
+							<td><input type="text" name="userId"></td>
+						</tr>
+						<tr>
+							<td>密&nbsp;&nbsp;&nbsp;&nbsp;码:</td>
+							<td><input type="password" name="password"></td>
+						</tr>
+						<tr>
+							<td colspan="2"><button type="submit">登录</button></td>
+						</tr>
+					</table>
+				</div>
+			</form>
+		</div>
+		<div class="footer">
+		  <div style="float:right;margin-top:10px;">TerasolunaFW5学习</div>
+		</div>
+	</div>
+</body>
+</html>

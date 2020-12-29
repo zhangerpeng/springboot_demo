@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<link rel="stylesheet" href="/css/user.css" />
+<title>用户管理系统</title>
+</head>
+<body>
+	<div class="container">
+		<div th:replace="header::copy"></div>
+		<!--判定用户是否登录成功-->
+		<div class="content">
+			<form action="#" th:action="@{/user/searchList}"
+				th:object="${searchForm}" method="post">
+				<div class="user_search">
+				<!-- ユーザID：項目 -->
+				<div id="userId">
+					<label>用户标号：</label><input type="text" th:field="*{userId}" />
+				</div>
+				<!-- ユーザ名前 -->
+				<div id="userName">
+					<label>用户名称：</label><input type="text" th:field="*{userName}" />
+				</div>
+				<!-- 生年月日 -->
+				<div id="userBirth">
+					<label>生日年月：</label><input type="text" th:field="*{userBirth}" />
+				</div>
+				<!-- 住所 -->
+				<div id="address">
+					<label>用户住址：</label><input type="text" th:field="*{address}" />
+				</div>
+				<!-- 電話番号 -->
+				<div id="telNum">
+					<label>电话番号：</label><input type="text" th:field="*{telNum}" />
+				</div>
+				<!-- 権限 -->
+				<!-- <div id="role">
+					<label>用户权限：</label>
+                    <section th:field="*{role}">
+                       <option th:each="role:${roles}">
+                       
+                       
+                       </option>
+                    
+                    </section>
+				</div> -->
+				<div id="sub_button">
+					<input type="submit" value="检索按钮">
+				</div>
+				
+			</div>
+			</form>
+
+		</div>
+		<div th:replace="footer::copy"></div>
+
+	</div>
+</body>
+</html>
